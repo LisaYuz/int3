@@ -55,9 +55,9 @@ header {
   position: relative;
   height: 130vh;
   background-image: url(../assets/plantin_heroimage.png);
-  background-size: 190% auto;
-  background-position: center 150%;
   background-repeat: no-repeat;
+  background-size: 200%;
+  background-position: center 120%;
 }
 
 .header__nav {
@@ -511,6 +511,15 @@ li img {
   text-align: center;
 }
 
+.start-button{
+  padding: var(--s1);
+  background-color: var(--c-red);
+  border: none;
+  color: var(--c-bg);
+  font-size: var(--fs-m);
+  justify-content: center;
+}
+
 .scream-room__title{
   font-family: 'Roslindale', serif;
   font-size: var(--fs-l);
@@ -907,14 +916,6 @@ li img {
   margin-bottom: 2rem;
 }
 
-.workshop__row {
-  display: flex; 
-  flex-direction: column;
-  justify-content: center; 
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
 .workshop__btn{
   background-color: var(--c-bg);
   border: none;
@@ -947,12 +948,15 @@ li img {
   width: 50%;
 }
 
+.workshop__row {
+  display: flex;  
+  justify-content: center; 
+  gap: 2rem;
+}
+
 .workshop__third-subtitile{
   font-size: .7rem;
   font-weight: bold;
-  max-width: 10rem;
-  text-align: center;
-  flex: 1 1 10rem;
 }
 
 .workshop__end{
@@ -1572,9 +1576,6 @@ footer{
     border: 2px dashed rgb(216, 216, 47) !important;
   }
 
-
-
-  
   .figure-container {
     grid-column: 2; 
     grid-row: 1 / span 3; 
@@ -1594,7 +1595,7 @@ footer{
     position: absolute;
     top: 0;
     left: 0;
-    width: 400px;
+    width: 350px;
     height: auto;
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -1602,17 +1603,12 @@ footer{
 
   .figure-container:hover .figure-hover {
     opacity: 1;
+    display: block;
   }
   
   .figure-container:hover .figure {
     opacity: 0;
   }
-
-
-
-
-
-
 
   .workshop__third-title{
     font-size: 2.5rem;
@@ -1628,6 +1624,12 @@ footer{
 
   .book{
     width: 350;
+  }
+  
+  .workshop__third-subtitle {
+    font-size: 1rem;
+    font-weight: 500;
+    padding: .5rem;
   }
 
   .workshop__end {

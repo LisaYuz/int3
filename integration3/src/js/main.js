@@ -8,10 +8,10 @@ figure.addEventListener('touchend', (event) => {
     const tapLength = currentTime - lastTap;
 
     if (tapLength < 500 && tapLength > 0) { 
-        if (figure.src.includes('figure.png')) {
+        if (figure.src.includes('figure.svg')) {
             figure.src = 'assets/figureplantin.png'; 
         } else {
-            figure.src = 'assets/figure.png'; 
+            figure.src = 'assets/figure.svg'; 
         }
     }
     
@@ -100,91 +100,119 @@ cities.forEach(city => {
 
 
 
+
 const soundIntensityLevels = [
-  { level: 30, message: "You are too quiet, your partner doesn't hear you" },
-  { level: 60, message: "Try a bit harder!" },
-  { level: 100, message: "He heard you, and brought ink!" }
-];
-
-let currentIntensityIndex = 0;
-let hasLoudEnoughScreamed = false;
-
-const updateSoundMessage = (intensity) => {
-  const soundMessageElement = document.querySelector(".scream-room__sound-text p");
-
-  const newIntensityIndex = soundIntensityLevels.findIndex((level) => intensity <= level.level);
-  if (newIntensityIndex !== -1 && newIntensityIndex !== currentIntensityIndex) {
-    currentIntensityIndex = newIntensityIndex;
-    soundMessageElement.textContent = soundIntensityLevels[newIntensityIndex].message;
-  }
-
-  if (intensity >= 80 && !hasLoudEnoughScreamed) {
-    hasLoudEnoughScreamed = true;
-    displayPopup();
-  }
-};
-
-const displayPopup = () => {
-  const popup = document.createElement("div");
-  popup.classList.add("popup");
-
-  popup.innerHTML = `
-    <h3>You screamed louder than 30% of other visitors!</h3>
-    <p>Share your result with others!</p>
-    <button class="close-popup">X</button>
-  `;
-  document.body.appendChild(popup);
-
-  popup.querySelector(".close-popup").addEventListener("click", () => {
-    popup.remove();
-  });
-};
-
-const startSoundDetection = () => {
-  navigator.mediaDevices
-    .getUserMedia({ audio: true })
-    .then((stream) => {
-      const audioContext = new AudioContext();
-      const analyser = audioContext.createAnalyser();
-      const audioSource = audioContext.createMediaStreamSource(stream);
-      audioSource.connect(analyser);
-      analyser.fftSize = 256;
-
-      const frequencyData = new Uint8Array(analyser.frequencyBinCount);
-      const detectSoundIntensity = () => {
-        analyser.getByteFrequencyData(frequencyData);
-        let averageVolume = frequencyData.reduce((sum, value) => sum + value) / frequencyData.length;
-        updateSoundMessage(averageVolume);
-        requestAnimationFrame(detectSoundIntensity);
-      };
-
-      detectSoundIntensity();
-    })
-    .catch((error) => {
-      console.error("Microphone access denied:", error);
-      document.querySelector(".scream-room__sound-text p").textContent =
-        "Microphone access is required to play.";
+    { level: 30, message: "You are too quiet, your partner doesn't hear you" },
+    { level: 60, message: "Try a bit harder!" },
+    { level: 100, message: "He heard you, and brought ink!" }
+  ];
+  
+  let currentIntensityIndex = 0;
+  let hasLoudEnoughScreamed = false;
+  let audioContext;
+  let analyser;
+  let frequencyData = null;
+  let detectingSound = false;
+  
+  const updateSoundMessage = (intensity) => {
+    const soundMessageElement = document.querySelector(".scream-room__sound-text p");
+  
+    const newIntensityIndex = soundIntensityLevels.findIndex((level) => intensity <= level.level);
+    if (newIntensityIndex !== -1 && newIntensityIndex !== currentIntensityIndex) {
+      currentIntensityIndex = newIntensityIndex;
+      soundMessageElement.textContent = soundIntensityLevels[newIntensityIndex].message;
+    }
+  
+    if (intensity >= 80 && !hasLoudEnoughScreamed) {
+      hasLoudEnoughScreamed = true;
+      displayPopup();
+    }
+  };
+  
+  const displayPopup = () => {
+    const popup = document.createElement("div");
+    popup.classList.add("popup");
+  
+    popup.innerHTML = `
+      <h3>You screamed louder than 30% of other visitors!</h3>
+      <p>Share your result with others!</p>
+      <button class="close-popup">X</button>
+    `;
+    document.body.appendChild(popup);
+  
+    popup.querySelector(".close-popup").addEventListener("click", () => {
+      popup.remove();
+      resetGame();
     });
-};
-
-startSoundDetection();
+  };
+  
+  const startSoundDetection = () => {
+    navigator.mediaDevices
+      .getUserMedia({ audio: true })
+      .then((stream) => {
+        audioContext = new AudioContext();
+        analyser = audioContext.createAnalyser();
+        const audioSource = audioContext.createMediaStreamSource(stream);
+        audioSource.connect(analyser);
+        analyser.fftSize = 256;
+  
+        frequencyData = new Uint8Array(analyser.frequencyBinCount);
+        detectingSound = true;
+  
+        const detectSoundIntensity = () => {
+          if (!detectingSound) return;
+          analyser.getByteFrequencyData(frequencyData);
+          let averageVolume = frequencyData.reduce((sum, value) => sum + value) / frequencyData.length;
+          updateSoundMessage(averageVolume);
+          requestAnimationFrame(detectSoundIntensity);
+        };
+  
+        detectSoundIntensity();
+      })
+      .catch((error) => {
+        console.error("Microphone access denied:", error);
+        document.querySelector(".scream-room__sound-text p").textContent =
+          "Microphone access is required to play.";
+      });
+  };
+  
+  const resetGame = () => {
+    hasLoudEnoughScreamed = false;
+    currentIntensityIndex = 0;
+    detectingSound = false;
+  
+    document.getElementById("start-button").style.display = "block";
+  };
+  
+  document.getElementById("start-button").addEventListener("click", function() {
+    startSoundDetection();
+    this.style.display = "none"; 
+  });
+  
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  const buttons = document.querySelectorAll(".workshop__btn");
-
-  buttons.forEach((button) => {
-    button.addEventListener("click", function () {
-      buttons.forEach((btn) => btn.classList.remove("correct", "incorrect"));
-
-      if (button.textContent.trim() === "5£") {
-        button.classList.add("correct");
-      } else {
-        button.classList.add("incorrect");
-      }
+    const buttons = document.querySelectorAll(".workshop__btn");
+  
+    const correctSound = new Audio("src/assets/audio/correct.mp3");
+    const errorSound = new Audio("src/assets/audio/error.mp3");
+  
+    buttons.forEach((button) => {
+      button.addEventListener("click", function () {
+        buttons.forEach((btn) => btn.classList.remove("correct", "incorrect"));
+  
+        if (button.textContent.trim() === "5£") {
+          button.classList.add("correct");
+          correctSound.currentTime = 0; 
+          correctSound.play();
+        } else {
+          button.classList.add("incorrect");
+          errorSound.currentTime = 0; 
+          errorSound.play();
+        }
+      });
     });
   });
-});
 
 
 

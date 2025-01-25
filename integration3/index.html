@@ -15,8 +15,13 @@
   <body>
     <div class="site-wrapper">
       <header class="header">
-          <nav class="header__nav">
-              <img src="./src/assets/logo_museum.jpg" alt="logo" width="50">
+          <nav class="header__nav">               
+            <img width="50" sizes="50px"
+              srcset="
+              ./src/assets/logo_size/logo_museum_eoh4wk_c_scale,w_160.webp 160w,
+              ./src/assets/logo_size/logo_museum_eoh4wk_c_scale,w_924.webp 924w,
+              ./src/assets/logo_size/logo_museum_eoh4wk_c_scale,w_2047.webp 2047w"
+              src="./src/assets/logo_size/logo_museum_eoh4wk_c_scale,w_2047.webp" alt="logo">
               <button class="header__menu-toggle" aria-label="Toggle navigation menu">
                   <span class="header__menu-line"></span>
                   <span class="header__menu-line"></span>
@@ -45,11 +50,11 @@
                             <span>n</span>
                           </a>
                         </li>                      
-                      <li><a href="#">Jan Moretus</a><img src="./src/assets/lock.png" alt="lock"></a></li></li>
-                      <li><a href="#">Peter Paul Rubens <img src="./src/assets/lock.png" alt="lock"></a></li>
-                      <li><a href="#">Aldus Manutius <img src="./src/assets/lock.png" alt="lock"></a></li>
-                      <li><a href="#">Henri Estienne II <img src="./src/assets/lock.png" alt="lock"></a></li>
-                      <li><a href="#">Justus Lipsius <img src="./src/assets/lock.png" alt="lock"></a></li>
+                      <li><a href="#">Jan Moretus</a><img src="./src/assets/lock.svg" alt="lock"></a></li></li>
+                      <li><a href="#">Peter Paul Rubens <img src="./src/assets/lock.svg" alt="lock"></a></li>
+                      <li><a href="#">Aldus Manutius <img src="./src/assets/lock.svg" alt="lock"></a></li>
+                      <li><a href="#">Henri Estienne II <img src="./src/assets/lock.svg" alt="lock"></a></li>
+                      <li><a href="#">Justus Lipsius <img src="./src/assets/lock.svg" alt="lock"></a></li>
                   </ul>                    
               </div>
           </nav>          
@@ -138,7 +143,7 @@
   
       <section class="scream-room">
           <audio id="scream-room__audio" loop>
-              <source src="./src/assets/people-talking-from-distant-271396.mp3" type="audio/mp3">
+              <source src="./src/assets/audio/people-talking-from-distant-271396.mp3" type="audio/mp3">
               Your browser does not support the audio element.
           </audio>
           <div class="scream-room__icon-container">
@@ -154,6 +159,7 @@
           <div class="scream-room__sound-text">
               <p>Make some noise!</p>
           </div>
+          <button id="start-button" class="start-button">START</button>
       </section>
       
       <section class="influencers">
@@ -196,15 +202,33 @@
           </div>
           <div class="marriage_container">
           <img class="mask" src="./src/assets/blue__mask.png" alt="background" width="350">
-          <img class="moretus" src="./src/assets/Jan Moretus.png" alt="Jan Moretus" width="100">    
-          <img class="martina" src="./src/assets/MartinaPlantin.png" alt="Martina Plantin" width="100">
+          <img class="moretus" sizes="100px"
+            srcset="
+            ./src/assets/Jan_Moretus_size/Jan_Moretus_vvzshz_c_scale,w_300.png 300w,
+            ./src/assets/Jan_Moretus_size/Jan_Moretus_vvzshz_c_scale,w_450.png 450w,
+            ./src/assets/Jan_Moretus_size/Jan_Moretus_vvzshz_c_scale,w_570.png 570w"
+            src="./src/assets/Jan_Moretus_size/Jan_Moretus_vvzshz_c_scale,w_570.png" alt="Jan Moretus" width="100">  
+          <img class="martina" sizes="100px"
+            srcset="
+            ./src/assets/MartinaPlantin_size/MartinaPlantin_i6m9bz_c_scale,w_300.png 300w,
+            ./src/assets/MartinaPlantin_size/MartinaPlantin_i6m9bz_c_scale,w_449.png 449w,
+            ./src/assets/MartinaPlantin_size/MartinaPlantin_i6m9bz_c_scale,w_570.png 570w"
+            src="./src/assets/MartinaPlantin_size/MartinaPlantin_i6m9bz_c_scale,w_570.png" alt="Martina Plantin" width="100">
           </div>
           <h1 class="marriage__title">A LEGACY THAT LIVES ON</h1>
           <p class="marriage__text">Plantin wasn’t just thinking about the next book—<strong class="bold"> he was thinking about the next generation. </strong> By carefully planning for succession and passing his business to his son-in-law, Jan Moretus, he ensured the longevity of his brand. His legacy lives on today through the Museum Plantin-Moretus, a UNESCO World Heritage Site—a testament to his enduring impact.</p>
       </section>
   
       <section class="letter">
-          <img class="letter__image" src="./src/assets/letter.png" alt="Letter" width="200">
+        <img class="letter__image" sizes="(min-width: 1120px) 30vw, (min-width: 640px) 50vw, 200px"
+          srcset="
+          ./src/assets/envelope_size/envelope_na2axq_c_scale,w_200.png 200w,
+          ./src/assets/envelope_size/envelope_na2axq_c_scale,w_497.png 497w,
+          ./src/assets/envelope_size/envelope_na2axq_c_scale,w_677.png 677w,
+          ./src/assets/envelope_size/envelope_na2axq_c_scale,w_843.png 843w,
+          ./src/assets/envelope_size/envelope_na2axq_c_scale,w_975.png 975w,
+          ./src/assets/envelope_size/envelope_na2axq_c_scale,w_1080.png 1080w"
+          src="./src/assets/envelope_na2axq_c_scale,w_1080.png" alt="Letter" width="200">
           <h1 class="letter__title">Plantin’s ability to adapt</h1>
           <p class="letter__text">Plantin’s ability to adapt to the political and religious turbulence of his time <strong class="bold"> was nothing short of genius.</strong> The 16th century was marked by deep divisions between Protestants and Catholics, a time when a misstep in allegiance could cost a life or livelihood. Plantin, however, was a master strategist.</p>
           <p class="letter__text">When Antwerp faced political and religious turmoil, <strong class="bold"> Plantin took bold steps to secure his business.</strong> He temporarily relocated and sought the patronage of King Philip II of Spain, requesting royal protection and financial support for his work. The king granted him a royal printing license, making Plantin the official printer for Catholic works, including the Polyglot Bible. This endorsement shielded him from persecution and ensured his business thrived during Europe's volatile period.</p>
@@ -224,7 +248,15 @@
               <p class="workshop__first-text">Drag the rider on horseback to the correct destination</p>
           <div class="draganddrop">
               <div id="paris" class="city" ></div>
-              <img id="horse" src="./src/assets/horse.png" alt="horse" width="200" class="draggable" draggable="true">
+              <img id="horse" sizes="(min-width: 1120px) 30vw, 200px"
+                srcset="
+                ./src/assets/horse_size/horse_j45xkm_c_scale,w_200.png 200w,
+                ./src/assets/horse_size/horse_j45xkm_c_scale,w_458.png 458w,
+                ./src/assets/horse_size/horse_j45xkm_c_scale,w_631.png 631w,
+                ./src/assets/horse_size/horse_j45xkm_c_scale,w_786.png 786w,
+                ./src/assets/horse_size/horse_j45xkm_c_scale,w_913.png 913w,
+                ./src/assets/horse_size/horse_j45xkm_c_scale,w_1024.png 1024w"
+                src="./src/assets/horse_size/horse_j45xkm_c_scale,w_1024.png" alt="horse" width="200" class="draggable" draggable="true">
               <div id="antwerp" class="city"></div>
            </div>
            <hr class="workshop__line">
@@ -236,7 +268,7 @@
                   <p class="workshop__second-subtitle">Every successful businessman and printing press master needs sharp eyes and attention to detail. Prove you’ve got what it takes by finding the hidden word in the figure</p>
               </div>
               <div class="figure-container">
-                  <img src="./src/assets/figure.png" alt="figure" class="figure" width="200">
+                  <img src="./src/assets/figure.svg" alt="figure" class="figure" width="200">
                   <img src="./src/assets/figureplantin.png" alt="figure on hover" class="figure-hover" width="200">
               </div>            
               <div class="input-container">
@@ -254,12 +286,12 @@
           <div class="workshop__third">
               <h2 class="workshop__third-title">Set the deal price</h2>
               <p class="workshop__third-text">Every successful businessman knows the art of negotiation. You’re sealing a deal with a merchant. Set the perfect price for your masterpiece. Can you strike the perfect balance?</p>
-              <div class="workshop_row">
+              <div class="workshop__row">
                   <p class="workshop__third-subtitile">100+ pages of botanical knowledge</p>
                   <p class="workshop__third-subtitile">Gold leaf and leather binding</p>
                 </div>
               <img class="book" src="./src/assets/book.png" alt="book" width="250">
-              <div class="workshop_row">
+              <div class="workshop__row">
                   <p class="workshop__third-subtitile">Fine parchment, durable and high-quality</p>
                   <p class="workshop__third-subtitile">Valued by merchants & scholars alike</p>
               </div>
