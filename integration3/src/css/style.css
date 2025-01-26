@@ -79,7 +79,6 @@ header {
   height: 50px;
   justify-content: center;
   align-items: center;
-  padding: 0;
   position: relative;
   z-index: 110;
   transition: background 0.3s ease-in-out;
@@ -136,7 +135,7 @@ header {
 }
 
 .header__menu-toggle.active .header__menu-line:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+  transform: rotate(45deg) translate(10px, 9px);
 }
 
 .header__menu-toggle.active .header__menu-line:nth-child(2) {
@@ -166,6 +165,8 @@ li a {
   text-decoration: none;
   color: var(--c-dark); 
   font-size: 1.5rem; 
+  display: flex; 
+  gap: 0;
 }
 
 li img {
@@ -1139,6 +1140,7 @@ footer{
     margin-bottom: 5rem;
   }
 
+
   .marriage{
     padding: 2rem;
     padding-bottom: 8rem;
@@ -1233,8 +1235,8 @@ footer{
   }
 
   .header__menu a {
-    font-size: 3rem;
-    padding-bottom: .5rem;
+    font-size: 4.5rem;
+    padding: 1rem;
   }
 
   .header__menu img {
@@ -1256,6 +1258,8 @@ footer{
   .plantin__menu a {
     display: inline-block;
     text-decoration: none;
+    display: flex; 
+    gap: 0;
   }
   
   .plantin__menu span {
