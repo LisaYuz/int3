@@ -69,8 +69,15 @@
           </div>
       </header>
   
-      <section class="antwerp__content">
-          <h1>Based in Antwerp, Christophe Plantin was a Renaissance entrepreneur, <span class="highlight"> who has built the print empire.</span> </h1>
+      <section>
+          <h1 class="antwerp__content">Based in Antwerp, Christophe Plantin was a Renaissance entrepreneur, <span class="highlight"> who has built the print empire.</span> </h1>
+          <div class="hover">
+            <img src="src/assets/magnifying_glass_white.svg" alt="magnifying glass" width="100">
+            <div class="hover__content">
+                <h2 class="hover__title">Discover hidden gems: Hover over!</h2>
+                <p>Discover the Plantin Museum! Hover over the icons to reveal Renaissance secrets and stories. Start exploring now!</p>
+            </div>
+        </div>
       </section>
   
       <section class="press">    
@@ -93,10 +100,10 @@
               <img class="plantin-strategy__image" src="./src/assets/plantin2_ps 2.png" alt="Plantin" width="300">
           </div>
           <p class="plantin-strategy__subtitle">STRATEGY OVER LUCK</p>
-          <div class="blue_bg"></div>
       </section>
   
       <section class="branding">
+        <div class="blue_bg"></div>
           <p class="branding__text">
               Plantin’s branding, embodied by the <strong class="bold">Golden Compass</strong>, symbolized precision and balance—core values of his business. This emblem reflected his press's meticulous craftsmanship and served as a beacon of excellence in 16th-century Antwerp's challenges.
           </p>
@@ -120,9 +127,9 @@
               <span>It was his “flagship product,” a masterpiece that combined cutting-edge scholarship, typography, and design.</span> 
               <span>This multilingual Bible showcased his ambition and skill, making waves across Europe like a trending global launch today.</span>
             </h1>              
-          <div class="hover-element">
-              <img class="hover__icon" src="./src/assets/magnifying glass.png" alt="magnifying glass" width="30">
-              <p class="bible__hover-text">Today, you can see the <strong class="bold">original Polyglot Bible</strong> displayed at the Plantin-Moretus Museum, a testament to his dedication to preserving knowledge for future generations</p>
+          <div class="magnifier">
+              <img class="magnifier-image" src="./src/assets/magnifying glass.png" alt="magnifying glass" width="30">
+              <p class="bible__hover-text text">Today, you can see the <strong class="bold">original Polyglot Bible</strong> displayed at the Plantin-Moretus Museum, a testament to his dedication to preserving knowledge for future generations</p>
           </div>
       </section>
   
@@ -130,9 +137,9 @@
           <p class="ink__subtitle">THE SILICON VALLEY OF ITS TIME</p>
           <h1 class="ink__title">Building a Renaissance Factory</h1>
           <p class="ink__text">The Plantin printing house was a <strong class="bold">“production powerhouse”</strong> ahead of its time.Standardized processes, skilled labor, and meticulous editing ensured consistency and efficiency, much like modern manufacturing giants. He had 22 printing presses, while his biggest competitor only 4.</p>
-          <div class="hover-element">
-              <img class="hover__icon" src="./src/assets/magnifyingglass_blue.png" alt="magnifying glass" width="30">
-              <p class="ink__hover-text">In the museum, you can see the historic printing presses...</p>
+          <div class="magnifier">
+              <img class="magnifier-image" src="./src/assets/magnifyingglass_blue.png" alt="magnifying glass" width="30">
+              <p class="ink__hover-text text">In the museum, you can see the historic printing presses and even try printing a page yourself</p>
           </div>
           <img class="ink__moving-image" src="./src/assets/ink_roller.png" alt="Ink roller">
       </section>
@@ -190,9 +197,9 @@
                   <p class="influencers__role">Humanist, scholar</p>
               </div>
           </div>            
-          <div class="hover-element">
-              <img class="hover__icon" src="./src/assets/magnifying glass.png" alt="magnifying glass" width="30">
-              <p class="influencers__hover-text">The museum brings this network to life, with its archives holding over 25,000 rare books, manuscripts, and letters, offering a window into the cultural and political power Plantin wielded</p>
+          <div class="magnifier">
+              <img class="magnifier-image"  src="./src/assets/magnifying glass.png" alt="magnifying glass" width="30">
+              <p class="influencers__hover-text text">The museum brings this network to life, with its archives holding over 25,000 rare books, manuscripts, and letters, offering a window into the cultural and political power Plantin wielded</p>
           </div>
       </section>
   
@@ -234,9 +241,9 @@
           <p class="letter__text">Plantin’s ability to adapt to the political and religious turbulence of his time <strong class="bold"> was nothing short of genius.</strong> The 16th century was marked by deep divisions between Protestants and Catholics, a time when a misstep in allegiance could cost a life or livelihood. Plantin, however, was a master strategist.</p>
           <p class="letter__text">When Antwerp faced political and religious turmoil, <strong class="bold"> Plantin took bold steps to secure his business.</strong> He temporarily relocated and sought the patronage of King Philip II of Spain, requesting royal protection and financial support for his work. The king granted him a royal printing license, making Plantin the official printer for Catholic works, including the Polyglot Bible. This endorsement shielded him from persecution and ensured his business thrived during Europe's volatile period.</p>
           <p class="letter__subtitle">@KingPhilipII</p>
-          <div class="hover-element">
-              <img class="hover__icon" src="./src/assets/magnifyingglass_blue.png" alt="magnifying glass" width="30">
-              <p class="letter__hover-element">The museum also houses <strong class="bold">the letters that Plantin wrote, </strong>  offering a glimpse into his professional life</p>
+          <div class="magnifier">
+              <img class="magnifier-image"  src="./src/assets/magnifyingglass_blue.png" alt="magnifying glass" width="30">
+              <p class="letter__hover-element text">The museum also houses <strong class="bold">the letters that Plantin wrote, </strong>  offering a glimpse into his professional life</p>
           </div>
       </section>
   
@@ -271,7 +278,8 @@
               <div class="figure-container">
                   <img src="./src/assets/figure.svg" alt="figure" class="figure" width="200">
                   <img src="./src/assets/figureplantin.png" alt="figure on hover" class="figure-hover" width="200">
-              </div>            
+              </div>
+              <p class="tip">If you need a tip,hover the figure</p>            
               <div class="input-container">
                   <input type="text" maxlength="1" class="letter-input" />
                   <input type="text" maxlength="1" class="letter-input" />
@@ -282,6 +290,9 @@
                   <input type="text" maxlength="1" class="letter-input" />
                   <button class="go-btn">></button>
                   </div>
+              <p class="instructions"><span class="circle yellowish"></span>– Letter is in the word, but in the wrong place</p>
+              <p class="instructions"><span class="circle green"></span> – Letter is in the correct place<p>
+              <p class="instructions"><span class="circle red"></span> – Letter is not in the word<p>
           </div>
   
           <div class="workshop__third">

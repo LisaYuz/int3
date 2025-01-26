@@ -213,7 +213,7 @@ const highlightSentences = () => {
 
 const inkFactoryScroll = () => {
   gsap.to('.ink__moving-image', {
-    x: window.innerWidth + 200, 
+    x: window.innerWidth + 400, 
     duration: 3,
     scrollTrigger: {
       trigger: ".ink__factory",
