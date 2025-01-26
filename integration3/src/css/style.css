@@ -410,6 +410,7 @@ li img {
 }
 
 .bible__launch{
+  position: relative;
   padding: var(--s0);
   margin-top: 4rem;
 }
@@ -566,7 +567,6 @@ li img {
   margin-bottom: 7rem;
 }
 
-
 .popup {
   position: fixed;
   top: 50%;
@@ -585,8 +585,10 @@ li img {
 }
 
 .popup h3 {
+  padding-top: 1rem;
   font-size: 1.5rem; 
   margin-bottom: 1.5rem; 
+  font-weight:bold ;
 }
 
 .popup p {
@@ -596,11 +598,29 @@ li img {
 
 .popup .close-popup {
   background: transparent;
+  position: absolute;
+  top: 1rem;
+  right: 3rem;
   color: var(--c-bg);
   font-size: 1.3rem;
   cursor: pointer;
   border: none;
   transition: background-color 0.3s ease, color 0.3s ease; 
+}
+
+.popup .social-icons a img {
+  width: 50px;
+  height: 50px;
+  padding: .5rem;
+  transition: transform 0.2s;
+}
+
+.popup .social-icons a {
+  text-decoration: none;
+}
+
+.popup .social-icons a img:hover {
+  transform: scale(1.2);
 }
 
 .influencers{
@@ -651,6 +671,7 @@ li img {
 }
 
 .marriage{
+  position: relative;
   padding: var(--s0);
   background-color: var(--c-blue);
   margin-top: 2rem ;
@@ -695,7 +716,7 @@ li img {
 }
 
 .martina{
-  margin-left: 33%;
+  left: 45%;
 }
 
 .marriage__title{
@@ -712,6 +733,7 @@ li img {
 .letter{
   padding: var(--s1);
   margin-top: 6rem;
+  position: relative;
 }
 
 .letter__image{
@@ -1027,7 +1049,6 @@ footer{
   }
 
   .plantin__printingpress {
-    position: absolute;
     right: 78%;
     top: 0%;  
   }
@@ -1286,7 +1307,6 @@ footer{
   }
 
   .plantin__printingpress {
-    position: absolute;
     right: 55%;
     top: 20%;  
   }
@@ -1458,6 +1478,26 @@ footer{
   .influencers__title{
     font-size: 3rem;
     line-height: 3.5rem;
+  }
+
+  .influencers{
+    padding: 5rem;
+  }
+  
+  .influencers__text{
+    margin-bottom: 2rem;
+  }
+  
+  .influencers__account {
+    margin-bottom: .5rem;
+  }
+  
+  .influencers__role{
+    font-size: 1rem;
+  }
+
+  .influencers__image{
+    width: 80%;
   }
 
   .marriage__title{

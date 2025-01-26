@@ -112,9 +112,20 @@ const displayPopup = () => {
   const popup = document.createElement("div");
   popup.classList.add("popup");
   popup.innerHTML = `
+    <button class="close-popup">X</button>
     <h3>You screamed louder than 30% of other visitors!</h3>
     <p>Share your result with others!</p>
-    <button class="close-popup">X</button>
+    <div class="social-icons">
+      <a href="#" target="_blank">
+        <img src="./src/assets/share_icon.svg" alt="Share">
+      </a>
+      <a href="https://www.instagram.com/" target="_blank">
+        <img src="./src/assets/inst_icon.svg" alt="Instagram">
+      </a>      
+      <a href="https://www.facebook.com/sharer/sharer.php?u=YOUR_URL" target="_blank">
+        <img src="./src/assets/fb_icon.svg" alt="Facebook">
+      </a>
+    </div>
   `;
   document.body.appendChild(popup);
   popup.querySelector(".close-popup").addEventListener("click", () => {
